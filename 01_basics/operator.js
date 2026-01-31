@@ -51,3 +51,25 @@ console.log("a1 =", a1); //0
 
 a1 ** 4; //a = a**4
 console.log("a1 =", a1); //0
+
+//comparision operator
+
+let a2 = 6;
+let b2 = 7;
+
+console.log("a2 == b2", a2 == b2);
+console.log("a2 != b2", a2 != b2);
+console.log("a2 === b2", a2 === b2);
+console.log("a2 > b2", a2 > b2);
+console.log("a2 >= b2", a2 >= b2);
+console.log("a2 < b2", a2 < b2);
+console.log("a2 <= b2", a2 <= b2);
+
+// logical operator
+
+let a3 = 6;
+let b3 = 7;
+
+console.log("cand1 && cnad2", a<b && a ===b);
+console.log("cand1 || cnad2", a<b || a ===b);
+console.log("cand1 ! cnad2", !(a<b));
