@@ -6,8 +6,6 @@ for(let i=1; i<=5; i++){
 
 // console.log("loop is ended");
 
-
-
 let sum = 0;
 
 for (let num = 1; num <= 5; num++) {
