@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Events – All in One</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    button { padding: 10px 15px; margin: 5px; }
+    div.box {
+      width: 200px;
+      height: 100px;
+      background: lightblue;
+      margin-top: 10px;
+      text-align: center;
+      line-height: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>JavaScript Events Demo</h2>
+
+  <!-- CLICK EVENT -->
+  <button id="clickBtn">Click Event</button>
+
+  <!-- INPUT / CHANGE -->
+  <br><br>
+  <input type="text" id="textInput" placeholder="Type something">
+  <p id="output"></p>
+
+  <!-- MOUSE EVENTS -->
+  <div class="box" id="box">Hover Me</div>
+
+  <!-- KEYBOARD -->
+  <br>
+  <input type="text" id="keyInput" placeholder="Press any key">
+
+  <!-- FORM SUBMIT -->
+  <br><br>
+  <form id="myForm">
+    <input type="text" placeholder="Enter name">
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // PAGE LOAD
+    document.addEventListener("DOMContentLoaded", function () {
+      console.log("HTML Loaded");
+    });
+
+    // CLICK EVENT
+    document.getElementById("clickBtn").addEventListener("click", function () {
+      alert("Button Clicked!");
+    });
+
+    // INPUT EVENT (real-time typing)
+    document.getElementById("textInput").addEventListener("input", function (e) {
+      document.getElementById("output").innerText = e.target.value;
+    });
+
+    // CHANGE EVENT
+    document.getElementById("textInput").addEventListener("change", function () {
+      console.log("Input value changed");
+    });
+
+    // MOUSE EVENTS
+    const box = document.getElementById("box");
+
+    box.addEventListener("mouseover", function () {
+      box.style.background = "orange";
+      box.innerText = "Mouse Over";
+    });
+
+    box.addEventListener("mouseout", function () {
+      box.style.background = "lightblue";
+      box.innerText = "Hover Me";
+    });
+
+    box.addEventListener("mousedown", function () {
+      console.log("Mouse Button Pressed");
+    });
+
+    box.addEventListener("mouseup", function () {
+      console.log("Mouse Button Released");
+    });
+
+    // KEYBOARD EVENTS
+    document.getElementById("keyInput").addEventListener("keydown", function (e) {
+      console.log("Key Down:", e.key);
+    });
+
+    document.getElementById("keyInput").addEventListener("keyup", function (e) {
+      console.log("Key Up:", e.key);
+    });
+
+    // FORM SUBMIT + preventDefault
+    document.getElementById("myForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // stops page refresh
+      alert("Form Submitted Successfully");
+    });
+
+    // FOCUS & BLUR
+    document.getElementById("keyInput").addEventListener("focus", function () {
+      console.log("Input Focused");
+    });
+
+    document.getElementById("keyInput").addEventListener("blur", function () {
+      console.log("Input Blurred");
+    });
+
+    // WINDOW LOAD
+    window.onload = function () {
+      console.log("Page Fully Loaded");
+    };
+  </script>
+
+</body>
+</html>
